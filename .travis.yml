@@ -1,0 +1,12 @@
+language: shell
+
+env:
+  global:
+    - DOCKERHUB_USERNAME=weineel
+
+before_script:
+  - echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
+ 
+script:
+  - docker build -t weineel/you-get:latest -f you-get/Dockerfile you-get/
+  - docker push weineel/you-get:latest
