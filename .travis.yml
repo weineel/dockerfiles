@@ -3,9 +3,9 @@ language: shell
 services:
   - docker
 
-env:
-  global:
-    - DOCKERHUB_USERNAME=weineel
+# env:
+#   global:
+#     - DOCKERHUB_USERNAME=weineel
 
 before_script:
   - echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
